@@ -1,0 +1,5260 @@
+<!-- 
+Payment Type          Credit/Debit      ACH Format Code/            ACH Int'l Type Code (IAC)     PMP Delivery Type     Transaction Number
+                                        Check Delivery Instruction/ and Domestic (DAC)
+                                        CEO Wire Type Code          with ACH Format Code of IAT
+CHK                   Credit            000                                                                             #PMT01
+CHK (Canadian)        Credit            000                                                                             #PMT02
+                                                                                                                        
+DAC                   Credit            CCD                                                                             #PMT03
+DAC                   Credit            CCP                                                                             #PMT04
+DAC                   Credit            CTX                                                                             #PMT05
+DAC                   Credit            PPD                                                                             #PMT06
+DAC                   Credit            PPP                                                                             #PMT07
+DAC                   Credit            WEB                                                                             #PMT08
+DAC                   Credit            TEL                                                                             #PMT09
+DAC                   Credit            ARC                                                                             #PMT10
+DAC                   Debit             CTX                                                                             #PMT11
+DAC                   Credit            CCP                                                       EMAIL                 #PMT12
+DAC                   Credit            CCP                                                       FAX                   #PMT13
+DAC                   Credit            CTX                                                       CEO                   #PMT14
+DAC                   Credit            PPP                                                       SDD                   #PMT15
+DAC                   Credit            PPP                                                       DR                    #PMT16
+DAC                   Credit            WEB                                                       DOC                   #PMT17
+                                                                                                  EUS Printing Data 
+DAC                   Credit            IAT                         DEP                                                 #PMT18
+                                                                                                                        
+IAC                   Credit            IAT                         ANN                                                 #PMT19
+IAC                   Credit            IAT                         PEN                                                 #PMT20
+IAC                   Credit            IAT                         SAL                                                 #PMT21
+IAC                   Credit            IAT                         DEP                           EMAIL                 #PMT22
+IAC                   Credit            IAT                         DEP                           FAX                   #PMT23
+IAC                   Credit            IAT                         DEP                           CEO                   #PMT24
+IAC                   Credit            IAT                         DEP                           SDD                   #PMT25
+IAC                   Credit            IAT                         DEP                           DR                    #PMT26
+IAC                   Credit            IAT                         DEP                           DOC                   #PMT27
+                             
+MTS (Domestic)        Credit                                                                                            #PMT28
+MTS (Int'l no IRC)    Credit                                                                                            #PMT29
+MTS (Int'l w/ IRC)    Credit                                                                                            #PMT30
+MTS (Domestic)        Credit                                                                      EMAIL                 #PMT31
+MTS (Domestic)        Credit                                                                      FAX                   #PMT32
+MTS (Domestic)        Credit                                                                      CEO                   #PMT33
+MTS (Domestic)        Credit                                                                      SDD                   #PMT34
+MTS (Domestic)        Credit                                                                      DR                    #PMT35
+MTS (Domestic)        Credit                                                                      DOC                   #PMT36
+MTS (Travel Rule)     Credit                                                                                            #PMT37
+MTS CHIPS             Credit                                                                                            #PMT66
+                                                                                                                        
+IWI                   Credit                                                                                            #PMT38
+IWI                   Credit                                                                      EMAIL                 #PMT39
+IWI                   Credit                                                                      FAX                   #PMT40
+IWI                   Credit                                                                      CEO                   #PMT41
+IWI                   Credit                                                                      SDD                   #PMT42
+IWI                   Credit                                                                      DR                    #PMT43
+IWI                   Credit                                                                      DOC                   #PMT44
+                             
+MT1                   Credit            CORT                                                                            #PMT45
+MT1                   Credit            URGP                                                                            #PMT46
+                                                                                                                        
+CEO                   Credit            BOOK                                                                            #PMT47
+CEO                   Credit            DOM                                                                             #PMT48
+                                                                                                                        
+CET                   Credit                                                                                            #PMT49
+                                                                                                                        
+PDP (DAC)             Credit                                                                                            #PMT50
+                                                                                                                        
+SDC                   Credit            000                                                                             #PMT51
+                                                                                                                        
+CCR                   Credit                                                                                            #PMT52
+CCR                   Credit                                                                                            #PMT68
+                                                                                                                        
+FDP                   Credit            000                                                                             #PMT53
+                            
+FDM                   Debit                                                                                             #PMT54
+                                                                                                                        
+CPC                   Credit                                                                                            #PMT55
+                                                                                                                        
+POB                   Credit            PO                                                                              #PMT56
+POB                   Credit            PO                                                                              #PMT57
+                            
+DAC Payroll           Credit            PPP                                                       SECURE                #PMT58
+CHK Payroll           Credit                                                                                            #PMT59
+MTS Payroll           Credit                                                                      DOC                   #PMT60
+IWI Payroll           Credit            IAT                         DEP                           DOC                   #PMT61
+IAC Payroll           Credit                                                                      EMAIL                 #PMT62
+CEO Payroll           Credit            DOM                                                       EMAIL                 #PMT63
+CET Payroll           Credit                                                                      EMAIL                 #PMT64
+          
+Invoice Manager CPC   Credit                                                                                            #PMT65
+ADV                                                                                                                     #PMT67
+
+-->
+
+
+
+<?xml version="1.0"?>
+<File CompanyID="TST1" PmtRecCount="68" PmtRecTotal="69000.00" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PmtRec PmtMethod="CHK" PmtCrDr="C">
+    <RefInfo RefType="IA">
+      <RefID>Insert1</RefID>
+    </RefInfo>
+    <RefInfo RefType="5A">
+      <RefID>Flex Field Data</RefID>
+    </RefInfo>
+    <RefInfo RefType="1A">
+      <RefID>Inline Insert1</RefID>
+    </RefInfo>
+    <Message MsgType="CHK">
+      <MsgText>This is the Check Memo field</MsgText>
+    </Message>
+    <Check>
+      <ChkNum>2001</ChkNum>
+      <ChkDocNum>444333556612345000</ChkDocNum>
+      <CourierName>Courier Name here</CourierName>
+      <CourierAccount>AJ1247BHER24</CourierAccount>
+      <DeliveryCode>400</DeliveryCode>
+    </Check>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <RefInfo RefType="A7">
+        <RefID>CHKIMG123</RefID>
+        <RefDesc>Check Image description</RefDesc>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>13868</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <Addr2>#44A</Addr2>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <DeliveryParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="LT">
+        <RefID>Delivery Label Text Here</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <Addr2>#44A</Addr2>
+        <Addr3>Third address line to map to Address line 3</Addr3>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+      <ContactInfo>
+        <PhoneNum Phone="18005551212"/>
+      </ContactInfo>
+    </DeliveryParty>
+    <ReturnParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <Addr2>#44A</Addr2>
+        <Addr3>Third address line to map to Address line 3</Addr3>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </ReturnParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="200.00" TotalCurAmt="1200.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV001">
+        <RefInfo RefType="5A">
+          <RefID>Invoice Flex Field Data Here</RefID>
+        </RefInfo>
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <InvoiceAdj AdjType="L8" AdjNumType="PY">
+          <InvoiceAdjNum>Reference 1234567890</InvoiceAdjNum>
+          <CurAmt>200.00</CurAmt>
+        </InvoiceAdj>
+        <POInfo POType="PO">
+          <PONum>PO555</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT001</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="CHK" PmtCrDr="C">
+    <RefInfo RefType="93">
+      <RefID>AA12345</RefID>
+    </RefInfo>
+    <RefInfo RefType="IA">
+      <RefID>Insert1</RefID>
+    </RefInfo>
+    <RefInfo RefType="5A">
+      <RefID>Flex Field Data</RefID>
+    </RefInfo>
+    <RefInfo RefType="1A">
+      <RefID>Inline Insert1</RefID>
+    </RefInfo>
+    <Message MsgType="CHK">
+      <MsgText>This is the Check Memo field</MsgText>
+    </Message>
+    <Check>
+      <ChkNum>2002</ChkNum>
+      <ChkDocNum>444333556612345000</ChkDocNum>
+      <DeliveryCode>440</DeliveryCode>
+    </Check>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <RefInfo RefType="A7">
+        <RefID>CHKIMG123</RefID>
+        <RefDesc>Check Image description</RefDesc>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+        <Name2>Canada Division</Name2>
+      </Name>
+      <PostAddr>
+        <Addr1>100 Test Street</Addr1>
+        <City>Toronto</City>
+        <StateProv>ON</StateProv>
+        <PostalCode>M5G1R1</PostalCode>
+        <Country>CA</Country>
+        <CountryName>Canada</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="2345871110" AcctType="D" AcctCur="CAD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV002">
+        <RefInfo RefType="5A">
+          <RefID>Invoice Flex Field Data Here</RefID>
+        </RefInfo>
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <InvoiceAdj AdjType="L8" AdjNumType="PY">
+          <InvoiceAdjNum>Reference 1234567890</InvoiceAdjNum>
+          <CurAmt>200.00</CurAmt>
+        </InvoiceAdj>
+        <POInfo POType="PO">
+          <PONum>PO556</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT002</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>CAD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CCD" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT003</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CCP" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV003">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO556</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT004</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CTX" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="500.00" NetCurAmt="500.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV004">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO556</PONum>
+        </POInfo>
+      </InvoiceInfo>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="300.00" NetCurAmt="300.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV005">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO557</PONum>
+        </POInfo>
+      </InvoiceInfo>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="200.00" NetCurAmt="200.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV006">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO558</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT005</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="PPD" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT006</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="PPP" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV007">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO558</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT007</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="WEB" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT008</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="TEL" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT009</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="ARC" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT010</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CTX" PmtMethod="DAC" PmtCrDr="D">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="500.00" NetCurAmt="500.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV004">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO558</PONum>
+        </POInfo>
+      </InvoiceInfo>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="300.00" NetCurAmt="300.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV005">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO559</PONum>
+        </POInfo>
+      </InvoiceInfo>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="200.00" NetCurAmt="200.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV006">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO560</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT011</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CCP" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV003">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO560</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT012</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CCP" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV003">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO560</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>FAX</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryFaxNumber>6025551234</DeliveryFaxNumber>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT013</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CTX" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="500.00" NetCurAmt="500.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV004">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO560</PONum>
+        </POInfo>
+      </InvoiceInfo>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="300.00" NetCurAmt="300.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV005">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO561</PONum>
+        </POInfo>
+      </InvoiceInfo>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="200.00" NetCurAmt="200.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV006">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO562</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>CEO</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT014</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="PPP" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV007">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO562</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>SECURE</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <SecureType>SINGLE</SecureType>
+          <SecureQuestion01>What is the name of the dog</SecureQuestion01>
+          <SecurePassword01>Fido</SecurePassword01>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT015</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="PPP" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV007">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO562</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DR</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT016</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="WEB" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>New York</City>
+            <StateProv>NY</StateProv>
+            <PostalCode>10024</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV007">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO562</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DOC</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <ReceivingAddress1>3321 N. Second Street</ReceivingAddress1>
+          <ReceivingAddress2>#245</ReceivingAddress2>
+          <ReceivingCity>Detroit</ReceivingCity>
+          <ReceivingState>MI</ReceivingState>
+          <ReceivingZip>46123</ReceivingZip>
+          <ReceivingCountry>US</ReceivingCountry>
+          <DeliveryCode>5</DeliveryCode>
+          <CourierAccount>123456</CourierAccount>		
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT017</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="DAC" PmtCrDr="C">
+    <Message MsgType="OBI">
+      <MsgText>This is an international qualifying DAC transactions</MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo Name="WELLS FARGO">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <VendorParty>
+      <Name>
+        <Name1>ACME Corporation Board of Directors</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118A Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </VendorParty>
+    <PmtID>PMT018</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="ANN" PmtMethod="IAC" PmtCrDr="C">
+    <RefInfo RefType="FI">
+      <RefID>FF</RefID>
+    </RefInfo>
+    <Message MsgType="OBI">
+      <MsgText>IAT with FX type and Inter. Bank and Ordering (vendor) info</MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999000999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <IntermediaryDepAcctID>
+      <DepAcctID>
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999000987</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </IntermediaryDepAcctID>
+    <VendorParty>
+      <Name>
+        <Name1>Acme Corporation Board of Directors</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118A Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </VendorParty>
+    <PmtID>PMT019</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="PEN" PmtMethod="IAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999000982</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT020</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="SAL" PmtMethod="IAC" PmtCrDr="C">
+    <Message MsgType="OBI">
+      <MsgText>INV004 PO564 EFF2006-11-24 DIS0.00 TOT500.00 NET500.00; INV005 PO565 EFF2006-11-24 DIS0.00 TOT300.00 NET300.00; INV006 PO566 EFF2006-11-24 DIS0.00 TOT200.00 NET 200.00 </MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999000991</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT021</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001997</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT022</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001923</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>FAX</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryFaxNumber>6025551234</DeliveryFaxNumber>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT023</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001923</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV005"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV006"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>CEO</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT024</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001923</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>SECURE</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <SecureType>SINGLE</SecureType>
+          <SecureQuestion01>What is the name of the dog</SecureQuestion01>
+          <SecurePassword01>Fido</SecurePassword01>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT025</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001923</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DR</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT026</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001923</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DOC</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <ReceivingAddress1>3321 N. Second Street</ReceivingAddress1>
+          <ReceivingAddress2>#245</ReceivingAddress2>
+          <ReceivingCity>Detroit</ReceivingCity>
+          <ReceivingState>MI</ReceivingState>
+          <ReceivingZip>46123</ReceivingZip>
+          <ReceivingCountry>US</ReceivingCountry>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT027</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT028</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2009-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Paris</City>
+        <Country>FR</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="Paris Bank" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Paris</City>
+            <Country>FR</Country>
+          </PostAddr>
+          <BankID>SWTUFR33</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <PmtID>PMT029</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV005"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV006"/>
+    </PmtDetail>
+    <PmtID>PMT030</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT031</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>FAX</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryFaxNumber>6025551234</DeliveryFaxNumber>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT032</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV005"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV006"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>CEO</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT033</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>SECURE</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <SecureType>SINGLE</SecureType>
+          <SecureQuestion01>What is the name of the dog</SecureQuestion01>
+          <SecurePassword01>Fido</SecurePassword01>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT034</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DR</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT035</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DOC</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <ReceivingAddress1>3321 N. Second Street</ReceivingAddress1>
+          <ReceivingAddress2>#245</ReceivingAddress2>
+          <ReceivingCity>Detroit</ReceivingCity>
+          <ReceivingState>MI</ReceivingState>
+          <ReceivingZip>46123</ReceivingZip>
+          <ReceivingCountry>US</ReceivingCountry>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT036</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" PmtCrDr="C">
+    <Message MsgType="OBI">
+      <MsgText>Funds transfer per John Smith request</MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>Investment USA Inc.</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <VendorParty>
+      <Name>
+        <Name1>John Smith</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>42115A</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>624 Mockingbird Way</Addr1>
+        <City>Orlando</City>
+        <StateProv>FL</StateProv>
+        <PostalCode>36547</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </VendorParty>
+    <PmtID>PMT037</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV005"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV006"/>
+    </PmtDetail>
+    <PmtID>PMT038</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT039</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>FAX</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryFaxNumber>6025551234</DeliveryFaxNumber>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT040</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV005"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV006"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>CEO</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT041</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>SECURE</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <SecureType>SINGLE</SecureType>
+          <SecureQuestion01>What is the name of the dog</SecureQuestion01>
+          <SecurePassword01>Fido</SecurePassword01>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT042</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DR</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+          <DeliveryUserID>ACMEUSER1</DeliveryUserID>
+          <DeliveryCompanyID>ACMECOID</DeliveryCompanyID>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT043</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Berlin</City>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>SWTBDE22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV007"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>DOC</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <ReceivingAddress1>3321 N. Second Street</ReceivingAddress1>
+          <ReceivingAddress2>#245</ReceivingAddress2>
+          <ReceivingCity>Detroit</ReceivingCity>
+          <ReceivingState>MI</ReceivingState>
+          <ReceivingZip>46123</ReceivingZip>
+          <ReceivingCountry>US</ReceivingCountry>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT044</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MT1" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo BankIDType="SWT">
+          <BankID>SWTBFI22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="444333556">
+        <BankInfo BankIDType="SWT">
+          <BankID>TESTDE12</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+    </PmtDetail>
+    <PmtID>PMT045</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="MT1" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo BankIDType="SWT">
+          <BankID>SWTBFI22</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="444333556">
+        <BankInfo BankIDType="SWT">
+          <BankID>TESTDE12</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV004"/>
+    </PmtDetail>
+    <PmtID>PMT046</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="BOOK" PmtMethod="CEO" PmtCrDr="C">
+    <IDInfo IDType="BatchID">
+      <ID>Batch01</ID>
+    </IDInfo>
+    <IDInfo IDType="OperatorID">
+      <ID>Oper1</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CEOIDABC</ID>
+    </IDInfo>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtID>PMT047</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="DOM" PmtMethod="CEO" PmtCrDr="C">
+    <IDInfo IDType="BatchID">
+      <ID>Batch01</ID>
+    </IDInfo>
+    <IDInfo IDType="OperatorID">
+      <ID>Oper1</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CEOIDABC</ID>
+    </IDInfo>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV003"/>
+    </PmtDetail>
+    <PmtID>PMT048</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="CET" PmtCrDr="C">
+    <IDInfo IDType="TemplateID">
+      <ID>CEOTemp012</ID>
+    </IDInfo>
+    <IDInfo IDType="BatchID">
+      <ID>Batch01</ID>
+    </IDInfo>
+    <IDInfo IDType="OperatorID">
+      <ID>Oper1</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CEOIDABC</ID>
+    </IDInfo>
+    <PmtID>PMT049</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <PrcDate>2006-11-24</PrcDate>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="CCP" PmtMethod="DAC" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME15</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV003">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO556</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PDPHandlingCode>T</PDPHandlingCode>
+    <PmtID>PMT050</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="SDC"  PmtCrDr="C">
+    <Check>
+      <ChkNum>2003</ChkNum>
+      <ChkDocNum>444333556612345000</ChkDocNum>
+      <DeliveryCode>410</DeliveryCode>
+    </Check>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <RefInfo RefType="A7">
+        <RefID>CHKIMG123</RefID>
+        <RefDesc>Check Image description</RefDesc>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>13868</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <Addr2>#44A</Addr2>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <ReturnParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </ReturnParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="200.00" TotalCurAmt="1200.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV001">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO555</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT051</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+
+  <PmtRec PmtMethod="CCR" PmtCrDr="C">
+    <IDInfo IDType="BatchID">
+      <ID>12345</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CustID</ID>
+    </IDInfo>
+    <Message MsgType="OBI">
+      <MsgText>Payee Invoice Ref</MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name2>ContactName</Name2>
+      </Name>
+      <ContactInfo>
+        <PhoneNum Phone="18005551212"/>
+      </ContactInfo>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>Guinness Stout</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>13868</RefID>
+      </RefInfo>
+      <PostAddr>
+        <PostalCode>43228</PostalCode>
+      </PostAddr>
+      <ContactInfo>
+        <EmailAddr>wmuat@wellsfargo.com</EmailAddr>
+      </ContactInfo>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="8883335566778811"/>
+    </OrgnrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV001"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV002">
+        <Note NoteType="INV">
+          <NoteText>Reimbursement Note</NoteText>
+        </Note>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT052</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  
+<PmtRec PmtMethod="CCR" PmtCrDr="C">
+    <IDInfo IDType="BatchID">
+      <ID>12345</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CustID</ID>
+    </IDInfo>
+    <Message MsgType="OBI">
+      <MsgText>Payee Invoice Ref</MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name2>ContactName</Name2>
+      </Name>
+      <ContactInfo>
+        <PhoneNum Phone="18005551212"/>
+      </ContactInfo>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>Guinness Stout</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>13868</RefID>
+      </RefInfo>
+      <PostAddr>
+        <PostalCode>43228</PostalCode>
+      </PostAddr>
+      <ContactInfo>
+        <EmailAddr>wmuat@wellsfargo.com</EmailAddr>
+      </ContactInfo>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="ABCDEF123456"/>
+    </OrgnrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV001"/>
+      <InvoiceInfo InvoiceType="IV" InvoiceNum="INV002">
+        <Note NoteType="INV">
+          <NoteText>Reimbursement Note</NoteText>
+        </Note>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT068</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+
+<PmtRec PmtMethod="FDP" TranHandlingCode="U" PmtCrDr="C">
+    <Message MsgType="ADD">
+      <MsgText>Testing FDP for TST1</MsgText>
+    </Message>
+    <OrgnrParty>
+      <Name>
+        <Name1>TST1 for FDP testing #1</Name1>
+      </Name>
+    </OrgnrParty>
+    <RcvrParty>
+      <RefInfo RefType="VN">
+        <RefID>StudentID1</RefID>
+      </RefInfo>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="1234567890" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <RefInfo RefType="ACH">
+            <RefID>5555555555</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="1000.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2009-02-17" InvoiceType="IV" InvoiceNum="ANTAUSD16"/>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000TST1</EDDBillerID>
+    </DocDelivery>
+    <PDPHandlingCode>T</PDPHandlingCode>
+    <PmtID>PMT053</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2009-02-17</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="FDM" PmtCrDr="D">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <RefInfo RefType="MN">
+        <RefID>1234567890</RefID>
+      </RefInfo>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>CH LASTNAME</Name1>
+        <Name2>CH FIRST NAME</Name2>
+      </Name>
+      <PostAddr>
+        <Addr1>118 BILLING ADD</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Bcity</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+      </PostAddr>
+    </RcvrParty>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="1111222233334444" AcctType="C"/>
+    </RcvrDepAcctID>
+    <PmtID>PMT054</PmtID>
+    <PmtSuppFDM>
+      <CardType>MC</CardType>
+      <ExpDate>2013-09</ExpDate>
+      <OrderFlag>IT</OrderFlag>
+      <EC>MJ</EC>
+    </PmtSuppFDM>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2009-09-09</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="CPC" PmtCrDr="C">
+    <IDInfo IDType="BatchID">
+      <ID>Batch01</ID>
+    </IDInfo>
+    <OrgnrParty>
+      <RefInfo RefType="8M">
+        <RefID>StudentID1</RefID>
+      </RefInfo>
+    </OrgnrParty>
+    <RcvrParty>
+      <RefInfo RefType="VN">
+        <RefID>StudentID2</RefID>
+      </RefInfo>
+    </RcvrParty>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="2000.00" TotalCurAmt="2000.00" NetCurAmt="1000.00" EffDt="2010-02-17" InvoiceType="IV" InvoiceNum="ANTAUSD69">
+        <Note NoteType="INV">
+          <NoteText>"This is a CPC invoice"</NoteText>
+        </Note>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT055</PmtID>
+    <CurAmt>2000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2010-02-17</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="PO" PmtMethod="POB" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>BUYERNAME</Name1>
+      </Name>
+      <RefInfo RefType="8M">
+        <RefID>1234567890</RefID>
+      </RefInfo>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>SUPPLIERNAME2</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>SUPREF#</RefID>
+      </RefInfo>
+    </RcvrParty>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2009-09-12" InvoiceType="IV" InvoiceNum="INV0067">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+      </InvoiceInfo>
+    </PmtDetail>
+    <PmtID>PMT056</PmtID>
+    <PmtSuppPOB>
+      <OrigInvDate>2009-09-10</OrigInvDate>
+    </PmtSuppPOB>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2009-09-09</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="PO" PmtMethod="POB" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>BUYERNAME</Name1>
+      </Name>
+      <RefInfo RefType="8M">
+        <RefID>1234567890</RefID>
+      </RefInfo>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>SUPPLIERNAME1</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>SUPREF#</RefID>
+      </RefInfo>
+    </RcvrParty>
+    <PmtID>PMT057</PmtID>
+    <PmtSuppPOB>
+      <OrigInvDate>2009-09-10</OrigInvDate>
+    </PmtSuppPOB>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2009-09-09</ValueDate>
+  </PmtRec>
+ <PmtRec PmtFormat="PPP" PmtMethod="DAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+         <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+   </OrgnrParty>
+     <RcvrParty>
+       <Name>
+         <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+         <RefID>ACME33</RefID>
+     </RefInfo>
+     <PostAddr>
+       <Addr1>118 Test Drive</Addr1>
+       <City>Columbus</City>
+       <StateProv>OH</StateProv>
+       <PostalCode>43228</PostalCode>
+       <Country>US</Country>
+       <CountryName>United States</CountryName>
+     </PostAddr>
+</RcvrParty>
+<OrgnrDepAcctID>
+    <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+       <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+         <RefInfo RefType="ACH">
+            <RefID>A123456789</RefID>
+          </RefInfo>
+          <BankID>121000248</BankID>
+      </BankInfo>
+    </DepAcctID>
+</OrgnrDepAcctID>
+<RcvrDepAcctID>
+   <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="USD">
+      <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+	<Addr1>2201 First Street</Addr1>
+	<City>New York</City>
+	<StateProv>NY</StateProv>
+	<PostalCode>10024</PostalCode>
+	<Country>US</Country>
+       </PostAddr>
+       <BankID>999000999</BankID>
+    </BankInfo>
+  </DepAcctID>
+</RcvrDepAcctID>
+<PmtDetail>
+   <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+     <Exemptions>
+       <StateExmpt>2</StateExmpt>
+       <FedExmpt>2</FedExmpt>
+       <WithholdStatus>M</WithholdStatus>
+       <WithholdAmt>10.00</WithholdAmt>
+     </Exemptions>
+     <Message MsgType="CMT">
+       <MsgText>This is a message to print on pay stub</MsgText>
+     </Message>
+     <AdditionalDetails>
+        <Desc>DEPARTMENT NUMBER</Desc>
+        <Details>001153</Details>
+     </AdditionalDetails>
+     <AdditionalDetails>
+        <Desc>ADDITIONAL W/H STATE</Desc>
+     </AdditionalDetails>
+     <AdditionalDetails>
+       <Desc>BASE RATE</Desc>
+     </AdditionalDetails>
+     <AdditionalDetails>
+        <Desc>ADDITIONAL W/H FED</Desc>
+     </AdditionalDetails>
+     <AdditionalDetails>
+        <Desc>PTO EARNED</Desc>
+     </AdditionalDetails>
+     <Earnings>
+        <Hours>40.00</Hours>
+        <AmtGroup>
+	<Desc>REGULAR</Desc>
+	<CurrAmt>1571.89</CurrAmt>
+	<YTDAmt>4223.50</YTDAmt>
+        </AmtGroup>
+     </Earnings>
+     <Earnings>
+         <Hours>10.00</Hours>
+         <AmtGroup>
+	  <Desc>OVERTIME</Desc>
+	<CurrAmt>1100.80</CurrAmt>
+	<YTDAmt>1100.80</YTDAmt>
+        </AmtGroup>
+     </Earnings>
+     <Earnings>
+        <Hours>3.00</Hours>
+        <AmtGroup>
+	<Desc>PTO DONATION</Desc>
+	<CurrAmt>80.45</CurrAmt>
+	<YTDAmt>240.56</YTDAmt>
+        </AmtGroup>
+     </Earnings>
+     <EarningsTotal>
+        <AmtGroup>
+	<Desc>TOTAL GROSS</Desc>
+	<CurrAmt>3260.87</CurrAmt>
+	<YTDAmt>17055.31</YTDAmt>
+        </AmtGroup>
+     </EarningsTotal>
+     <Deductions>
+        <AmtGroup>
+	<Desc>FEDERAL TAX</Desc>
+	<CurrAmt>518.90</CurrAmt>
+	<YTDAmt>2716.34</YTDAmt>
+        </AmtGroup>
+     </Deductions>
+     <Deductions>
+         <AmtGroup>
+	<Desc>STATE TAX-NC</Desc>
+	<CurrAmt>192.09</CurrAmt>
+	<YTDAmt>1003.11</YTDAmt>
+         </AmtGroup>
+     </Deductions>
+     <Deductions>
+        <AmtGroup>
+	<Desc>SS-OASDI</Desc>
+	<CurrAmt>186.41</CurrAmt>
+	<YTDAmt>979.54</YTDAmt>
+        </AmtGroup>
+     </Deductions>
+     <Deductions>
+         <AmtGroup>
+	<Desc>SS-MEDICARE</Desc>
+	<CurrAmt>43.65</CurrAmt>
+	<YTDAmt>229.61</YTDAmt>
+         </AmtGroup>
+     </Deductions>
+     <Deductions>
+        <AmtGroup>
+	<Desc>LTD</Desc>
+	<CurrAmt>21.25</CurrAmt>
+	<YTDAmt>106.25</YTDAmt>
+        </AmtGroup>
+     </Deductions>
+     <DeductionsTotal>
+         <AmtGroup>
+	<Desc>TOTAL DEDUCT</Desc>
+	<CurrAmt>1619.57</CurrAmt>
+	<YTDAmt>8557.47</YTDAmt>
+        </AmtGroup>
+     </DeductionsTotal>
+     <DeductionsTotal>
+        <AmtGroup>
+	<Desc>NET PAY</Desc>
+	<CurrAmt>1641.30</CurrAmt>
+	<YTDAmt>8557.84</YTDAmt>
+        </AmtGroup>
+     </DeductionsTotal>
+     <AccountReporting>
+        <CurrAmt>125.00</CurrAmt>
+        <CurCode>USD</CurCode>
+        <ReasonCode>L6</ReasonCode>
+        <AcctID>9101101010</AcctID>
+         <BankIDType>ABA</BankIDType>
+         <BankID>053000196</BankID>
+     </AccountReporting>
+     <RefInfo RefType="ZX">
+         <RefID>This is extra data to be printed</RefID>
+         <RefDesc>Just making sure this is printed</RefDesc>
+      </RefInfo>
+    </Payroll>
+</PmtDetail>
+<DocDelivery>
+   <EDDBillerID>10000ABCD</EDDBillerID>
+   <FileOut>
+      <FileType>XML</FileType>
+       <FileFormat>PDF</FileFormat>
+       <Delivery>
+	<DeliveryType>SECURE</DeliveryType>
+	<DeliveryContactName>Accounts Receivable</DeliveryContactName>
+	<SecureType>SINGLE</SecureType>
+	<SecureQuestion01>What is the name of the dog</SecureQuestion01>
+	<SecurePassword01>Fido</SecurePassword01>
+       </Delivery>
+     </FileOut>
+   </DocDelivery>
+   <PmtID>PMT058</PmtID>
+   <CurAmt>1000.00</CurAmt>
+   <CurCode>USD</CurCode>
+   <ValueDate>2010-03-24</ValueDate>
+ </PmtRec>
+ <PmtRec PmtMethod="CHK" PmtCrDr="C">
+     <RefInfo RefType="IA">
+        <RefID>Insert1</RefID>
+     </RefInfo>
+     <RefInfo RefType="1A">
+         <RefID>Inline Insert1</RefID>
+     </RefInfo>
+     <Message MsgType="CHK">
+         <MsgText>This is the Check Memo field</MsgText>
+      </Message>
+      <Check>
+	<ChkNum>2001</ChkNum>
+	<ChkDocNum>WP7001WL3945WS0004</ChkDocNum>
+	<DeliveryCode>400</DeliveryCode>
+      </Check>
+      <OrgnrParty>
+ 	<Name>
+                 <Name1>ABC Company</Name1>
+	</Name>
+	<PostAddr>
+	   <Addr1>321 Main Street</Addr1>
+	   <Addr2>Suite 2</Addr2>
+	   <City>Phoenix</City>
+	   <StateProv>AZ</StateProv>
+	   <PostalCode>85003</PostalCode>
+	   <Country>US</Country>
+	   <CountryName>United States</CountryName>
+             </PostAddr>
+      </OrgnrParty>
+      <RcvrParty>
+         <Name>
+	<Name1>ACME Corp</Name1>
+         </Name>
+         <RefInfo RefType="VN">
+	<RefID>13868</RefID>
+         </RefInfo>
+         <PostAddr>
+	<Addr1>118 Test Drive</Addr1>
+	<Addr2>#44A</Addr2>
+	<City>Columbus</City>
+	<StateProv>OH</StateProv>
+	<PostalCode>43228</PostalCode>
+	<Country>US</Country>
+	<CountryName>United States</CountryName>
+          </PostAddr>
+     </RcvrParty>
+     <OrgnrDepAcctID>
+        <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+           <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+	 <BankID>121000248</BankID>
+           </BankInfo>
+        </DepAcctID>
+     </OrgnrDepAcctID>
+     <PmtDetail>
+        <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+	<Exemptions>
+	   <StateExmpt>1</StateExmpt>
+	   <FedExmpt>1</FedExmpt>
+	   <WithholdStatus>S</WithholdStatus>
+	   <WithholdAmt>25.00</WithholdAmt>
+	</Exemptions>
+	<Message MsgType="CMT">
+	   <MsgText>This is a message to print on pay stub</MsgText>
+	</Message>
+	<AdditionalDetails>
+	   <Desc>DEPARTMENT NUMBER</Desc>
+	   <Details>001153</Details>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>ADDITIONAL W/H STATE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	    <Desc>BASE RATE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>ADDITIONAL W/H FED</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	    <Desc>PTO EARNED</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	    <Desc>SICK BALANCE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>PTO BALANCE</Desc>
+	   <Details>10.16</Details>
+	</AdditionalDetails>
+	<Earnings>
+	   <Hours>40.00</Hours>
+	   <AmtGroup>
+	      <Desc>REGULAR</Desc>
+	      <CurrAmt>1571.89</CurrAmt>
+	      <YTDAmt>4223.50</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<Earnings>
+	   <Hours>10.00</Hours>
+	   <AmtGroup>
+	      <Desc>OVERTIME</Desc>
+	      <CurrAmt>1100.80</CurrAmt>
+	      <YTDAmt>1100.80</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<Earnings>
+	   <Hours>3.00</Hours>
+	   <AmtGroup>
+                    <Desc>PTO DONATION</Desc>
+	     <CurrAmt>80.45</CurrAmt>
+	     <YTDAmt>240.56</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<EarningsTotal>
+	   <AmtGroup>
+	      <Desc>TOTAL GROSS</Desc>
+	      <CurrAmt>3260.87</CurrAmt>
+	     <YTDAmt>17055.31</YTDAmt>
+	   </AmtGroup>
+	</EarningsTotal>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>FEDERAL TAX</Desc>
+	      <CurrAmt>518.90</CurrAmt>
+	      <YTDAmt>2716.34</YTDAmt>
+	    </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>STATE TAX-NC</Desc>
+	      <CurrAmt>192.09</CurrAmt>
+	      <YTDAmt>1003.11</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>SS-OASDI</Desc>
+	      <CurrAmt>186.41</CurrAmt>
+	      <YTDAmt>979.54</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>SS-MEDICARE</Desc>
+	      <CurrAmt>43.65</CurrAmt>
+	      <YTDAmt>229.61</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>LTD</Desc>
+	      <CurrAmt>21.25</CurrAmt>
+	      <YTDAmt>106.25</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<DeductionsTotal>
+	   <AmtGroup>
+	      <Desc>TOTAL DEDUCT</Desc>
+	      <CurrAmt>1619.57</CurrAmt>
+	      <YTDAmt>8557.47</YTDAmt>
+	   </AmtGroup>
+	</DeductionsTotal>
+	<DeductionsTotal>
+	   <AmtGroup>
+	      <Desc>NET PAY</Desc>
+	      <CurrAmt>1641.30</CurrAmt>
+	      <YTDAmt>8557.84</YTDAmt>
+	   </AmtGroup>
+	</DeductionsTotal>
+       </Payroll>
+     </PmtDetail>
+     <PmtID>PMT059</PmtID>
+     <CurAmt>1000.00</CurAmt>
+     <CurCode>USD</CurCode>
+     <ValueDate>2010-03-24</ValueDate>
+</PmtRec>
+<PmtRec PmtMethod="MTS" TranHandlingCode="U" PmtCrDr="C">
+   <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+          <Addr1>321 Main Street</Addr1>
+          <Addr2>Suite 2</Addr2>
+          <City>Phoenix</City>
+          <StateProv>AZ</StateProv>
+          <PostalCode>85003</PostalCode>
+          <Country>US</Country>
+       </PostAddr>
+   </OrgnrParty>
+   <RcvrParty>
+      <Name>
+         <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+         <Addr1>118 Test Drive</Addr1>
+         <City>Denver</City>
+         <StateProv>CO</StateProv>
+         <PostalCode>64512</PostalCode>
+         <Country>US</Country>
+      </PostAddr>
+   </RcvrParty>
+   <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+         <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+	<BankID>121000248</BankID>
+         </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+        <DepAcctID AcctID="8862254433" AcctType="D">
+           <BankInfo Name="USA Bank" BankIDType="ABA">
+	<PostAddr>
+	   <Addr1>2201 First Street</Addr1>
+	   <City>Denver</City>
+	   <StateProv>CO</StateProv>
+	   <PostalCode>64502</PostalCode>
+	   <Country>US</Country>
+	</PostAddr>
+            <BankID>555777999</BankID>
+         </BankInfo>
+       </DepAcctID>
+   </RcvrDepAcctID>
+   <PmtDetail>
+      <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+         <Exemptions>
+	<StateExmpt>2</StateExmpt>
+	<FedExmpt>2</FedExmpt>
+	<WithholdStatus>M</WithholdStatus>
+	<WithholdAmt>10.00</WithholdAmt>
+         </Exemptions>
+         <Message MsgType="CMT">
+	<MsgText>This is a message to print on pay stub</MsgText>
+          </Message>
+          <AdditionalDetails>
+	<Desc>DEPARTMENT NUMBER</Desc>
+	<Details>001153</Details>
+          </AdditionalDetails>
+          <AdditionalDetails>
+	<Desc>ADDITIONAL W/H STATE</Desc>
+          </AdditionalDetails>
+          <AdditionalDetails>
+	<Desc>BASE RATE</Desc>
+          </AdditionalDetails>
+          <AdditionalDetails>
+	<Desc>ADDITIONAL W/H FED</Desc>
+          </AdditionalDetails>
+          <AdditionalDetails>
+	<Desc>PTO EARNED</Desc>
+           </AdditionalDetails>
+           <AdditionalDetails>
+               <Desc>SICK BALANCE</Desc>
+            </AdditionalDetails>
+            <AdditionalDetails>
+	<Desc>PTO BALANCE</Desc>
+               <Details>10.16</Details>
+            </AdditionalDetails>
+            <Earnings>
+	<Hours>40.00</Hours>
+	<AmtGroup>
+	   <Desc>REGULAR</Desc>
+	   <CurrAmt>1571.89</CurrAmt>
+	   <YTDAmt>4223.50</YTDAmt>
+	</AmtGroup>
+            </Earnings>
+            <Earnings>
+	<Hours>10.00</Hours>
+	<AmtGroup>
+	   <Desc>OVERTIME</Desc>
+	   <CurrAmt>1100.80</CurrAmt>
+	   <YTDAmt>1100.80</YTDAmt>
+	</AmtGroup>
+            </Earnings>
+            <Earnings>
+	<Hours>3.00</Hours>
+	<AmtGroup>
+	   <Desc>PTO DONATION</Desc>
+	   <CurrAmt>80.45</CurrAmt>
+	   <YTDAmt>240.56</YTDAmt>
+	</AmtGroup>
+            </Earnings>
+            <EarningsTotal>
+	<AmtGroup>
+	   <Desc>TOTAL GROSS</Desc>
+	   <CurrAmt>3260.87</CurrAmt>
+	   <YTDAmt>17055.31</YTDAmt>
+	</AmtGroup>
+           </EarningsTotal>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>FEDERAL TAX</Desc>
+	   <CurrAmt>518.90</CurrAmt>
+	   <YTDAmt>2716.34</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>STATE TAX-NC</Desc>
+	    <CurrAmt>192.09</CurrAmt>
+	    <YTDAmt>1003.11</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>SS-OASDI</Desc>
+	   <CurrAmt>186.41</CurrAmt>
+	   <YTDAmt>979.54</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>SS-MEDICARE</Desc>
+	   <CurrAmt>43.65</CurrAmt>
+	   <YTDAmt>229.61</YTDAmt>
+	</AmtGroup>
+            </Deductions>
+            <Deductions>
+	<AmtGroup>
+	   <Desc>LTD</Desc>
+	   <CurrAmt>21.25</CurrAmt>
+	   <YTDAmt>106.25</YTDAmt>
+	</AmtGroup>
+             </Deductions>
+             <DeductionsTotal>
+	<AmtGroup>
+	   <Desc>TOTAL DEDUCT</Desc>
+	   <CurrAmt>1619.57</CurrAmt>
+	   <YTDAmt>8557.47</YTDAmt>
+	</AmtGroup>
+             </DeductionsTotal>
+             <DeductionsTotal>
+	<AmtGroup>
+	   <Desc>NET PAY</Desc>
+	   <CurrAmt>1641.30</CurrAmt>
+	   <YTDAmt>8557.84</YTDAmt>
+	</AmtGroup>
+             </DeductionsTotal>
+             <AccountReporting>
+	<CurrAmt>125.00</CurrAmt>
+	<CurCode>USD</CurCode>
+ 	<ReasonCode>L6</ReasonCode>
+	<AcctID>9101101010</AcctID>
+	<BankIDType>ABA</BankIDType>
+	<BankID>053000196</BankID>
+             </AccountReporting>
+             <RefInfo RefType="ZX">
+	   <RefID>This is extra data to be printed</RefID>
+	   <RefDesc>Just making sure this is printed</RefDesc>
+              </RefInfo>
+	     </Payroll>
+	</PmtDetail>
+	<DocDelivery>
+	   <EDDBillerID>10000ABCD</EDDBillerID>
+	   <FileOut>
+	      <FileType>XML</FileType>
+	     <FileFormat>PDF</FileFormat>
+	     <Delivery>
+	        <DeliveryType>DOC</DeliveryType>
+	        <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+	        <ReceivingAddress1>3321 N. Second Street</ReceivingAddress1>
+	        <ReceivingAddress2>#245</ReceivingAddress2>
+	        <ReceivingCity>Detroit</ReceivingCity>
+	        <ReceivingState>MI</ReceivingState>
+	        <ReceivingZip>46123</ReceivingZip>
+	        <ReceivingCountry>US</ReceivingCountry>
+	      </Delivery>
+	 </FileOut>
+           </DocDelivery>
+           <PmtID>PMT060</PmtID>
+           <CurAmt>1000.00</CurAmt>
+           <CurCode>USD</CurCode>
+          <ValueDate>2010-11-24</ValueDate>
+</PmtRec>
+<PmtRec PmtMethod="IWI" TranHandlingCode="U" PmtCrDr="C">
+   <OrgnrParty>
+      <Name>
+         <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+         <Addr1>321 Main Street</Addr1>
+         <Addr2>Suite 2</Addr2>
+         <City>Phoenix</City>
+         <StateProv>AZ</StateProv>
+         <PostalCode>85003</PostalCode>
+         <Country>US</Country>
+      </PostAddr>
+   </OrgnrParty>
+   <RcvrParty>
+      <Name>
+         <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+          <Addr1>118 Test Drive</Addr1>
+          <City>Berlin</City>
+          <Country>DE</Country>
+       </PostAddr>
+   </RcvrParty>
+   <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D" AcctCur="USD">
+         <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+	<BankID>121000248</BankID>
+         </BankInfo>
+      </DepAcctID>
+   </OrgnrDepAcctID>
+   <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+         <BankInfo Name="Germany Bank" BranchID="58314625" BankIDType="SWT">
+	<PostAddr>
+	   <Addr1>2201 First Street</Addr1>
+	  <City>Berlin</City>
+	  <Country>DE</Country>
+              </PostAddr>
+	<BankID>SWTBDE22</BankID>
+          </BankInfo>
+      </DepAcctID>
+   </RcvrDepAcctID>
+   <PmtDetail>
+      <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+         <Exemptions>
+	<StateExmpt>2</StateExmpt>
+	<FedExmpt>2</FedExmpt>
+	<WithholdStatus>M</WithholdStatus>
+	<WithholdAmt>10.00</WithholdAmt>
+         </Exemptions>
+         <Message MsgType="CMT">
+            <MsgText>This is a message to print on pay stub</MsgText>
+         </Message>
+        <AdditionalDetails>
+	<Desc>DEPARTMENT NUMBER</Desc>
+	<Details>001153</Details>
+        </AdditionalDetails>
+        <AdditionalDetails>
+	<Desc>ADDITIONAL W/H STATE</Desc>
+        </AdditionalDetails>
+        <AdditionalDetails>
+	<Desc>BASE RATE</Desc>
+        </AdditionalDetails>
+        <AdditionalDetails>
+	<Desc>ADDITIONAL W/H FED</Desc>
+        </AdditionalDetails>
+        <AdditionalDetails>
+	<Desc>PTO EARNED</Desc>
+        </AdditionalDetails>
+        <AdditionalDetails>
+	<Desc>SICK BALANCE</Desc>
+        </AdditionalDetails>
+        <AdditionalDetails>
+	<Desc>PTO BALANCE</Desc>
+	<Details>10.16</Details>
+        </AdditionalDetails>
+        <Earnings>
+	<Hours>40.00</Hours>
+	<AmtGroup>
+                 <Desc>REGULAR</Desc>
+	   <CurrAmt>1571.89</CurrAmt>
+	   <YTDAmt>4223.50</YTDAmt>
+	</AmtGroup>
+         </Earnings>
+         <Earnings>
+	<Hours>10.00</Hours>
+	<AmtGroup>
+	   <Desc>OVERTIME</Desc>
+	   <CurrAmt>1100.80</CurrAmt>
+	   <YTDAmt>1100.80</YTDAmt>
+	</AmtGroup>
+          </Earnings>
+          <Earnings>
+	<Hours>3.00</Hours>
+	<AmtGroup>
+	   <Desc>PTO DONATION</Desc>
+	   <CurrAmt>80.45</CurrAmt>
+	   <YTDAmt>240.56</YTDAmt>
+	</AmtGroup>
+           </Earnings>
+           <EarningsTotal>
+	<AmtGroup>
+	   <Desc>TOTAL GROSS</Desc>
+	   <CurrAmt>3260.87</CurrAmt>
+	   <YTDAmt>17055.31</YTDAmt>
+	</AmtGroup>
+           </EarningsTotal>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>FEDERAL TAX</Desc>
+	   <CurrAmt>518.90</CurrAmt>
+	   <YTDAmt>2716.34</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>STATE TAX-NC</Desc>
+	   <CurrAmt>192.09</CurrAmt>
+	   <YTDAmt>1003.11</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>SS-OASDI</Desc>
+	   <CurrAmt>186.41</CurrAmt>
+	   <YTDAmt>979.54</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>SS-MEDICARE</Desc>
+	   <CurrAmt>43.65</CurrAmt>
+	   <YTDAmt>229.61</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <Deductions>
+	<AmtGroup>
+	   <Desc>LTD</Desc>
+	   <CurrAmt>21.25</CurrAmt>
+	   <YTDAmt>106.25</YTDAmt>
+	</AmtGroup>
+           </Deductions>
+           <DeductionsTotal>
+	<AmtGroup>
+	   <Desc>TOTAL DEDUCT</Desc>
+	   <CurrAmt>1619.57</CurrAmt>
+	  <YTDAmt>8557.47</YTDAmt>
+	</AmtGroup>
+           </DeductionsTotal>
+           <DeductionsTotal>
+	<AmtGroup>
+	   <Desc>NET PAY</Desc>
+	   <CurrAmt>1641.30</CurrAmt>
+	  <YTDAmt>8557.84</YTDAmt>
+	</AmtGroup>
+            </DeductionsTotal>
+            <AccountReporting>
+	<CurrAmt>125.00</CurrAmt>
+	<CurCode>USD</CurCode>
+	<ReasonCode>L6</ReasonCode>
+	<AcctID>9101101010</AcctID>
+	<BankIDType>ABA</BankIDType>
+	<BankID>053000196</BankID>
+            </AccountReporting>
+            <RefInfo RefType="ZX">
+	<RefID>This is extra data to be printed</RefID>
+	<RefDesc>Just making sure this is printed</RefDesc>
+            </RefInfo>
+       </Payroll>
+    </PmtDetail>
+    <DocDelivery>
+       <EDDBillerID>10000ABCD</EDDBillerID>
+       <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+	<DeliveryType>DOC</DeliveryType>
+	<DeliveryContactName>Accounts Receivable</DeliveryContactName>
+	<ReceivingAddress1>3321 N. Second Street</ReceivingAddress1>
+	<ReceivingAddress2>#245</ReceivingAddress2>
+	<ReceivingCity>Detroit</ReceivingCity>
+	<ReceivingState>MI</ReceivingState>
+	<ReceivingZip>46123</ReceivingZip>
+	<ReceivingCountry>US</ReceivingCountry>
+        </Delivery>
+      </FileOut>
+   </DocDelivery>
+   <PmtID>PMT061</PmtID>
+   <CurAmt>1000.00</CurAmt>
+   <CurCode>EUR</CurCode>
+   <ValueDate>2010-11-24</ValueDate>
+</PmtRec>
+<PmtRec PmtFormat="IAT" PmtFormatIntl="DEP" PmtMethod="IAC" TranHandlingCode="U" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Berlin</City>
+        <StateProv>UD</StateProv>
+        <PostalCode>1000</PostalCode>
+        <Country>DE</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID>
+        <BankInfo>
+          <RefInfo RefType="ACH">
+            <RefID>B123456789</RefID>
+          </RefInfo>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D" AcctCur="EUR">
+        <BankInfo Name="Germany Bank" BankIDType="SWT">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>999001997</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+     	<Exemptions>
+	   <StateExmpt>2</StateExmpt>
+	   <FedExmpt>2</FedExmpt>
+	   <WithholdStatus>M</WithholdStatus>
+	   <WithholdAmt>10.00</WithholdAmt>
+     	</Exemptions>
+	<Message MsgType="CMT">
+	   <MsgText>This is a message to print on pay stub</MsgText>
+	</Message>
+	<AdditionalDetails>
+	   <Desc>DEPARTMENT NUMBER</Desc>
+	   <Details>001153</Details>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>ADDITIONAL W/H STATE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>BASE RATE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>ADDITIONAL W/H FED</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>PTO EARNED</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>SICK BALANCE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>PTO BALANCE</Desc>
+	   <Details>10.16</Details>
+	</AdditionalDetails>
+	<Earnings>
+	   <Hours>40.00</Hours>
+	   <AmtGroup>
+	      <Desc>REGULAR</Desc>
+	      <CurrAmt>1571.89</CurrAmt>
+	      <YTDAmt>4223.50</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<Earnings>
+	   <Hours>10.00</Hours>
+	   <AmtGroup>
+	      <Desc>OVERTIME</Desc>
+	      <CurrAmt>1100.80</CurrAmt>
+	      <YTDAmt>1100.80</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<Earnings>
+	   <Hours>3.00</Hours>
+	   <AmtGroup>
+	      <Desc>PTO DONATION</Desc>
+	      <CurrAmt>80.45</CurrAmt>
+	      <YTDAmt>240.56</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<EarningsTotal>
+	   <AmtGroup>
+	      <Desc>TOTAL GROSS</Desc>
+	      <CurrAmt>3260.87</CurrAmt>
+	      <YTDAmt>17055.31</YTDAmt>
+	   </AmtGroup>
+	</EarningsTotal>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>FEDERAL TAX</Desc>
+	      <CurrAmt>518.90</CurrAmt>
+	      <YTDAmt>2716.34</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>STATE TAX-NC</Desc>
+	      <CurrAmt>192.09</CurrAmt>
+	      <YTDAmt>1003.11</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>SS-OASDI</Desc>
+	      <CurrAmt>186.41</CurrAmt>
+	      <YTDAmt>979.54</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	       <Desc>SS-MEDICARE</Desc>
+	       <CurrAmt>43.65</CurrAmt>
+	       <YTDAmt>229.61</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>LTD</Desc>
+	      <CurrAmt>21.25</CurrAmt>
+	      <YTDAmt>106.25</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<DeductionsTotal>
+	   <AmtGroup>
+	      <Desc>TOTAL DEDUCT</Desc>
+	      <CurrAmt>1619.57</CurrAmt>
+	      <YTDAmt>8557.47</YTDAmt>
+	    </AmtGroup>
+	</DeductionsTotal>
+	<DeductionsTotal>
+	   <AmtGroup>
+	      <Desc>NET PAY</Desc>
+	      <CurrAmt>1641.30</CurrAmt>
+	      <YTDAmt>8557.84</YTDAmt>
+	    </AmtGroup>
+	</DeductionsTotal>
+	<AccountReporting>
+	   <CurrAmt>125.00</CurrAmt>
+	   <CurCode>USD</CurCode>
+	   <ReasonCode>L6</ReasonCode>
+	   <AcctID>9101101010</AcctID>
+	   <BankIDType>ABA</BankIDType>
+	   <BankID>053000196</BankID>
+	</AccountReporting>
+	<RefInfo RefType="ZX">
+	    <RefID>This is extra data to be printed</RefID>
+	    <RefDesc>Just making sure this is printed</RefDesc>
+	</RefInfo>
+        </Payroll>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT062</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>EUR</CurCode>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtFormat="DOM" PmtMethod="CEO" PmtCrDr="C" TranHandlingCode="U">
+    <IDInfo IDType="BatchID">
+      <ID>Batch01</ID>
+    </IDInfo>
+    <IDInfo IDType="OperatorID">
+      <ID>Oper1</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CEOIDABC</ID>
+    </IDInfo>
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+         <Exemptions>
+	<StateExmpt>2</StateExmpt>
+	<FedExmpt>2</FedExmpt>
+	<WithholdStatus>M</WithholdStatus>
+	<WithholdAmt>10.00</WithholdAmt>
+          </Exemptions>
+          <Message MsgType="CMT">
+	<MsgText>This is a message to print on pay stub</MsgText>
+           </Message>
+           <AdditionalDetails>
+	<Desc>DEPARTMENT NUMBER</Desc>
+	<Details>001153</Details>
+           </AdditionalDetails>
+           <AdditionalDetails>
+	<Desc>ADDITIONAL W/H STATE</Desc>
+           </AdditionalDetails>
+           <AdditionalDetails>
+	<Desc>BASE RATE</Desc>
+           </AdditionalDetails> 
+           <AdditionalDetails>
+	<Desc>ADDITIONAL W/H FED</Desc>
+           </AdditionalDetails>
+           <AdditionalDetails>
+	<Desc>PTO EARNED</Desc>
+           </AdditionalDetails>
+           <AdditionalDetails>
+	<Desc>SICK BALANCE</Desc>
+           </AdditionalDetails>
+           <AdditionalDetails>
+	<Desc>PTO BALANCE</Desc>
+	<Details>10.16</Details>
+           </AdditionalDetails>
+           <Earnings>
+	<Hours>40.00</Hours>
+	<AmtGroup>
+	   <Desc>REGULAR</Desc>
+	   <CurrAmt>1571.89</CurrAmt>
+	   <YTDAmt>4223.50</YTDAmt>
+	</AmtGroup>
+           </Earnings>
+           <Earnings>
+	<Hours>10.00</Hours>
+	<AmtGroup>
+	   <Desc>OVERTIME</Desc>
+	   <CurrAmt>1100.80</CurrAmt>
+	   <YTDAmt>1100.80</YTDAmt>
+	</AmtGroup>
+            </Earnings>
+            <Earnings>
+	<Hours>3.00</Hours>
+	<AmtGroup>
+	   <Desc>PTO DONATION</Desc>
+	   <CurrAmt>80.45</CurrAmt>
+	   <YTDAmt>240.56</YTDAmt>
+	</AmtGroup>
+            </Earnings>
+            <EarningsTotal>
+	<AmtGroup>
+	   <Desc>TOTAL GROSS</Desc>
+	   <CurrAmt>3260.87</CurrAmt>
+	   <YTDAmt>17055.31</YTDAmt>
+	</AmtGroup>
+            </EarningsTotal>
+            <Deductions>
+	<AmtGroup>
+	   <Desc>FEDERAL TAX</Desc>
+	   <CurrAmt>518.90</CurrAmt>
+	   <YTDAmt>2716.34</YTDAmt>
+	</AmtGroup>
+            </Deductions>
+            <Deductions>
+	<AmtGroup>
+	   <Desc>STATE TAX-NC</Desc>
+	   <CurrAmt>192.09</CurrAmt>
+	   <YTDAmt>1003.11</YTDAmt>
+	</AmtGroup>
+            </Deductions>
+            <Deductions>
+	<AmtGroup>
+	   <Desc>SS-OASDI</Desc>
+	   <CurrAmt>186.41</CurrAmt>
+	   <YTDAmt>979.54</YTDAmt>
+	</AmtGroup>
+            </Deductions>
+            <Deductions>
+	<AmtGroup>
+	   <Desc>SS-MEDICARE</Desc>
+	   <CurrAmt>43.65</CurrAmt>
+	   <YTDAmt>229.61</YTDAmt>
+	</AmtGroup>
+            </Deductions>
+            <Deductions>
+	<AmtGroup>
+	   <Desc>LTD</Desc>
+	   <CurrAmt>21.25</CurrAmt>
+	   <YTDAmt>106.25</YTDAmt>
+	</AmtGroup>
+            </Deductions>
+            <DeductionsTotal>
+	<AmtGroup>
+	   <Desc>TOTAL DEDUCT</Desc>
+	   <CurrAmt>1619.57</CurrAmt>
+	   <YTDAmt>8557.47</YTDAmt>
+	</AmtGroup>
+            </DeductionsTotal>
+            <DeductionsTotal>
+	<AmtGroup>
+	   <Desc>NET PAY</Desc>
+	   <CurrAmt>1641.30</CurrAmt>
+	   <YTDAmt>8557.84</YTDAmt>
+	</AmtGroup>
+            </DeductionsTotal>
+            <AccountReporting>
+	<CurrAmt>125.00</CurrAmt>
+	<CurCode>USD</CurCode>
+	<ReasonCode>L6</ReasonCode>
+	<AcctID>9101101010</AcctID>
+	<BankIDType>ABA</BankIDType>
+	<BankID>053000196</BankID>
+            </AccountReporting>
+            <RefInfo RefType="ZX">
+	<RefID>This is extra data to be printed</RefID>
+	<RefDesc>Just making sure this is printed</RefDesc>
+           </RefInfo>
+        </Payroll>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT063</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+  <PmtRec PmtMethod="CET" PmtCrDr="C">
+    <IDInfo IDType="TemplateID">
+      <ID>CEOTemp012</ID>
+    </IDInfo>
+    <IDInfo IDType="BatchID">
+      <ID>Batch01</ID>
+    </IDInfo>
+    <IDInfo IDType="OperatorID">
+      <ID>Oper1</ID>
+    </IDInfo>
+    <IDInfo IDType="CustomerID">
+      <ID>CEOIDABC</ID>
+    </IDInfo>
+<OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="ABA">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777999</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <PmtDetail>
+      <Payroll PrdBeginDate="2010-03-01" PrdEndDate="2010-03-15">
+	<Exemptions>
+	   <StateExmpt>2</StateExmpt>
+	   <FedExmpt>2</FedExmpt>
+	   <WithholdStatus>M</WithholdStatus>
+	   <WithholdAmt>10.00</WithholdAmt>
+	</Exemptions>
+	<Message MsgType="CMT">
+	   <MsgText>This is a message to print on pay stub</MsgText>
+	</Message>
+	<AdditionalDetails>
+	   <Desc>DEPARTMENT NUMBER</Desc>
+	   <Details>001153</Details>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>ADDITIONAL W/H STATE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>BASE RATE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>ADDITIONAL W/H FED</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>PTO EARNED</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>SICK BALANCE</Desc>
+	</AdditionalDetails>
+	<AdditionalDetails>
+	   <Desc>PTO BALANCE</Desc>
+	   <Details>10.16</Details>
+	</AdditionalDetails>
+	<Earnings>
+	   <Hours>40.00</Hours>
+	   <AmtGroup>
+	      <Desc>REGULAR</Desc>
+	      <CurrAmt>1571.89</CurrAmt>
+	      <YTDAmt>4223.50</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<Earnings>
+	   <Hours>10.00</Hours>
+	   <AmtGroup>
+	      <Desc>OVERTIME</Desc>
+	      <CurrAmt>1100.80</CurrAmt>
+	      <YTDAmt>1100.80</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<Earnings>
+	   <Hours>3.00</Hours>
+	   <AmtGroup>
+	      <Desc>PTO DONATION</Desc>
+	      <CurrAmt>80.45</CurrAmt>
+	      <YTDAmt>240.56</YTDAmt>
+	   </AmtGroup>
+	</Earnings>
+	<EarningsTotal>
+	   <AmtGroup>
+	      <Desc>TOTAL GROSS</Desc>
+	      <CurrAmt>3260.87</CurrAmt>
+	      <YTDAmt>17055.31</YTDAmt>
+	   </AmtGroup>
+	</EarningsTotal>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>FEDERAL TAX</Desc>
+	      <CurrAmt>518.90</CurrAmt>
+	      <YTDAmt>2716.34</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	      <Desc>STATE TAX-NC</Desc>
+	      <CurrAmt>192.09</CurrAmt>
+	      <YTDAmt>1003.11</YTDAmt>
+	    </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	       <Desc>SS-OASDI</Desc>
+	       <CurrAmt>186.41</CurrAmt>
+	       <YTDAmt>979.54</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	       <Desc>SS-MEDICARE</Desc>
+	       <CurrAmt>43.65</CurrAmt>
+	       <YTDAmt>229.61</YTDAmt>
+	    </AmtGroup>
+	</Deductions>
+	<Deductions>
+	   <AmtGroup>
+	     <Desc>LTD</Desc>
+	     <CurrAmt>21.25</CurrAmt>
+	      <YTDAmt>106.25</YTDAmt>
+	   </AmtGroup>
+	</Deductions>
+	<DeductionsTotal>
+	   <AmtGroup>
+	      <Desc>TOTAL DEDUCT</Desc>
+	      <CurrAmt>1619.57</CurrAmt>
+	      <YTDAmt>8557.47</YTDAmt>
+	   </AmtGroup>
+	</DeductionsTotal>
+	<DeductionsTotal>
+	   <AmtGroup>
+	      <Desc>NET PAY</Desc>
+	      <CurrAmt>1641.30</CurrAmt>
+	      <YTDAmt>8557.84</YTDAmt>
+	    </AmtGroup>
+	</DeductionsTotal>
+	<AccountReporting>
+	   <CurrAmt>125.00</CurrAmt>
+	   <CurCode>USD</CurCode>
+	   <ReasonCode>L6</ReasonCode>
+	   <AcctID>9101101010</AcctID>
+	   <BankIDType>ABA</BankIDType>
+	   <BankID>053000196</BankID>
+	</AccountReporting>
+	<RefInfo RefType="ZX">
+	    <RefID>This is extra data to be printed</RefID>
+	    <RefDesc>Just making sure this is printed</RefDesc>
+	</RefInfo>
+          </Payroll>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT064</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <PrcDate>2006-11-24</PrcDate>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+<PmtRec PmtMethod="CPC" InvoiceMgrFlag="Y" PmtCrDr="C">
+ <IDInfo IDType="BatchID">
+  <ID>Batch ID</ID> 
+  </IDInfo>
+ <OrgnrParty>
+  <Name>
+   <Name1>Originator Name 1</Name1>
+  </Name>
+ <RefInfo RefType="8M">
+  <RefID>OrigPart1</RefID> 
+  </RefInfo>
+  </OrgnrParty>
+ <RcvrParty>
+  <Name>
+   <Name1>Receiver Name 1</Name1>
+  </Name>
+ <RefInfo RefType="VN">
+  <RefID>0051234</RefID> 
+  </RefInfo>
+  </RcvrParty>
+ <PmtDetail>
+ <InvoiceInfo DiscountCurAmt="0" TotalCurAmt="25.00" NetCurAmt="25.00" EffDt="2010-04-08" InvoiceType="IV" InvoiceNum="PMIMinv01">
+ <Note NoteType="INV">
+  <NoteText>I001_01_Valid</NoteText> 
+  </Note> 
+  </InvoiceInfo>
+  </PmtDetail>
+  <PmtID>PMT065</PmtID> 
+  <CurAmt>1000.00</CurAmt> 
+  <CurCode>USD</CurCode> 
+  <ValueDate>2010-04-15</ValueDate>   
+  </PmtRec>
+  <PmtRec PmtMethod="MTS" PmtCrDr="C">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Denver</City>
+        <StateProv>CO</StateProv>
+        <PostalCode>64512</PostalCode>
+        <Country>US</Country>
+      </PostAddr>
+    </RcvrParty>
+    <OrgnrDepAcctID>
+      <DepAcctID AcctID="4443335566" AcctType="D">
+        <BankInfo Name="WELLS FARGO" BankIDType="ABA">
+          <BankID>121000248</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </OrgnrDepAcctID>
+    <RcvrDepAcctID>
+      <DepAcctID AcctID="8862254433" AcctType="D">
+        <BankInfo Name="USA Bank" BankIDType="CHP">
+          <PostAddr>
+            <Addr1>2201 First Street</Addr1>
+            <City>Denver</City>
+            <StateProv>CO</StateProv>
+            <PostalCode>64502</PostalCode>
+            <Country>US</Country>
+          </PostAddr>
+          <BankID>555777</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </RcvrDepAcctID>
+    <IntermediaryDepAcctID>
+      <DepAcctID>
+        <BankInfo Name="Germany Bank" BankIDType="CHP">
+          <PostAddr>
+            <Country>DE</Country>
+          </PostAddr>
+          <BankID>1234</BankID>
+        </BankInfo>
+      </DepAcctID>
+    </IntermediaryDepAcctID>
+    <PmtID>PMT066</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <CurCode>USD</CurCode>
+    <ValueDate>2009-11-24</ValueDate>
+  </PmtRec>
+<PmtRec PmtMethod="ADV" TranHandlingCode="U">
+    <OrgnrParty>
+      <Name>
+        <Name1>ABC Company</Name1>
+      </Name>
+      <PostAddr>
+        <Addr1>321 Main Street</Addr1>
+        <Addr2>Suite 2</Addr2>
+        <City>Phoenix</City>
+        <StateProv>AZ</StateProv>
+        <PostalCode>85003</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </OrgnrParty>
+    <RcvrParty>
+      <Name>
+        <Name1>ACME Corp</Name1>
+      </Name>
+      <RefInfo RefType="VN">
+        <RefID>ACME33</RefID>
+      </RefInfo>
+      <PostAddr>
+        <Addr1>118 Test Drive</Addr1>
+        <City>Columbus</City>
+        <StateProv>OH</StateProv>
+        <PostalCode>43228</PostalCode>
+        <Country>US</Country>
+        <CountryName>United States</CountryName>
+      </PostAddr>
+    </RcvrParty>
+    <PmtDetail>
+      <InvoiceInfo DiscountCurAmt="0.00" TotalCurAmt="1000.00" NetCurAmt="1000.00" EffDt="2006-11-24" InvoiceType="IV" InvoiceNum="INV003">
+        <Note NoteType="INV">
+          <NoteText>Payment for Invoice</NoteText>
+        </Note>
+        <POInfo POType="PO">
+          <PONum>PO560</PONum>
+        </POInfo>
+      </InvoiceInfo>
+    </PmtDetail>
+    <DocDelivery>
+      <EDDBillerID>10000ABCD</EDDBillerID>
+      <FileOut>
+        <FileType>XML</FileType>
+        <FileFormat>PDF</FileFormat>
+        <Delivery>
+          <DeliveryType>EMAIL</DeliveryType>
+          <DeliveryContactName>Accounts Receivable</DeliveryContactName>
+          <DeliveryEmailAddress>AcctRecv@ACME.com</DeliveryEmailAddress>
+        </Delivery>
+      </FileOut>
+    </DocDelivery>
+    <PmtID>PMT067</PmtID>
+    <CurAmt>1000.00</CurAmt>
+    <ValueDate>2010-11-24</ValueDate>
+  </PmtRec>
+<FileInfoGrp FileDate="2006-11-24" FileControlNumber="FILE0001"/>
+</File>
