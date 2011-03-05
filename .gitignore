@@ -1,4 +1,5 @@
 *.gem
+references
 .bundle
 Gemfile.lock
 pkg/*
