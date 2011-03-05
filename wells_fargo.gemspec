@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
   s.name        = "wells_fargo"
   s.version     = WellsFargo::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["Jack Danger Canty"]
+  s.email       = ["rubygems@6brand.com"]
+  s.homepage    = "http://github.com/JackDanger/wells_fargo"
+  s.summary     = %q{Client for the Wells Fargo Payment Manager service}
+  s.description = %q{Outsource your check writing and other payment services to Wells Fargo's api via this Ruby client.}
 
   s.rubyforge_project = "wells_fargo"
 
