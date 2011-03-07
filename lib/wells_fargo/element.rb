@@ -19,13 +19,14 @@ module WellsFargo
     end
 
     def child name
-      
+      @children ||= []
+      @children << name
     end
 
     def method_missing method, *args, &block
       if @@attributes.include? method.to_sym
         attribute method, *args, &block
-      elsif @@children.include? method.to_sym
+      elsif @@children.any? {|c| method.to_sym == c[:name] }
         child method, *args, &block
       else
         super

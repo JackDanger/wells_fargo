@@ -10,3 +10,8 @@ Rake::TestTask.new(:test) do |test|
   test.pattern = 'test/*.rb'
   test.verbose = true
 end
+
+desc "Refresh element definition files from schema.xml"
+task :from_schema do
+  system "ruby -rubygems -r lib/wells_fargo/schema.rb -e 'WellsFargo::Schema.generate_element_files'"
+end

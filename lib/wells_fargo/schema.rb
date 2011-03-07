@@ -10,7 +10,9 @@ module WellsFargo
         schema do |definition|
           name = definition.attributes['name'].value
           file = File.join(ElementDir, "#{underscore name}.rb")
-          File.open(file, 'w') do |f| f.write <<-EOF
+          puts "Writing #{name} => #{File.basename file}"
+          File.open(file, 'w') do |f|
+            f.write <<-EOF  
 class #{name} < WellsFargo::Element
 #{(definition / 'xsd|attribute').map do |attr|
   attribute_name = attr.attributes['name'].value
