@@ -1,17 +1,17 @@
 module WellsFargo
   class Element
 
+    def initialize(parent, &block)
+      @parent = parent
+    end
+
     def attribute name, value
-      @attributes ||= []
-      @attributes << name
+      
     end
 
-    def child name
-      @children ||= []
-      @children << name.constantize.new
-    end
-
-    def to_xml(parent = nil)
+    def child name, &block
+      result = yield name.constantize.new(self)
+      parent.add_child result
     end
 
     protected

@@ -16,9 +16,7 @@ module WellsFargo
     protected
 
       def method_missing method, *args, &block
-        if @@attributes.include? method.to_sym
-          attribute method, *args, &block
-        elsif @@children.any? {|c| method.to_sym == c[:name] }
+        if WellsFargo::Element.constants.include? method.to_s
           child method, *args, &block
         else
           super

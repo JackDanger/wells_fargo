@@ -3,7 +3,7 @@ require File.expand_path File.join(File.dirname(__FILE__), 'test_helper')
 class PaymentManagerTest < Test::Unit::TestCase
   context "client" do
     setup {
-      @client = WellsFargo::PaymentManager.new :company_id => 'TestCompany'
+      @client = WellsFargo::PaymentManager.new 'TestCompany'
     }
     context "with one check payable record" do
       setup {
@@ -13,9 +13,9 @@ class PaymentManagerTest < Test::Unit::TestCase
   end
 
   def build_check_payable(client)
-    client.add_payable_record do |payable|
+    client.PmtRec do |payable|
       payable.method :CHK
-      payable.ref 'IA', 'Insert1'
+      payable.ref_info 'IA', 'Insert1'
       payable.ref '5A', 'Flex Field Data'
       payable.ref '1A', 'Inline Insert1'
       payable.message :CHK, 'This is the Check Memo Field'

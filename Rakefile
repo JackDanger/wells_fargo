@@ -12,6 +12,6 @@ Rake::TestTask.new(:test) do |test|
 end
 
 desc "Refresh element definition files from schema.xml"
-task :from_schema do
-  system "ruby -rubygems -r lib/wells_fargo/schema.rb -e 'WellsFargo::Schema.generate_element_files'"
+task :schema_to_ruby do
+  system "ruby -rubygems -r lib/wells_fargo.rb -e 'WellsFargo::Schema.generate_element_files'"
 end
