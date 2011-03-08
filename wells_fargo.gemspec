@@ -10,10 +10,11 @@ Gem::Specification.new do |s|
   s.email       = ["rubygems@6brand.com"]
   s.homepage    = "http://github.com/JackDanger/wells_fargo"
   s.summary     = %q{Client for the Wells Fargo Payment Manager service}
-  s.description = %q{Outsource your check writing and other payment services to Wells Fargo's api via this Ruby client.}
+  s.description = %q{Outsource your check writing and other payment services to Wells Fargo's API via this Ruby client.}
 
   s.rubyforge_project = "wells_fargo"
 
+  s.add_dependency 'builder'
   s.add_development_dependency 'shoulda'
 
   s.files         = `git ls-files`.split("\n")
