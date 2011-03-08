@@ -1,11 +1,19 @@
 module WellsFargo
   module Schema
 
-    Schema     = File.expand_path File.join(File.dirname(__FILE__), '..', 'schema.xml')
-    ElementDir = File.expand_path File.join(File.dirname(__FILE__), 'elements')
-
+    Schema      = File.expand_path File.join(File.dirname(__FILE__), '..', 'schema.xml')
+    ElementDir  = File.expand_path File.join(File.dirname(__FILE__), 'elements')
+    NameMapFile = File.expand_path File.join(ElementDir, 'name_map.rb')
     class << self
+
+      def NameMap
+        Marshal.load File.read(NameMapFile)
+      rescue Errno::ENOENT
+        {}
+      end
+
       def generate_element_files
+        @name_map = {}
         schema do |definition|
           class_name = definition.attributes['name'].value
           file = File.join(ElementDir, "#{WellsFargo.underscore class_name}.rb")
@@ -18,6 +26,7 @@ module WellsFargo
 #{(definition / 'xsd|attribute').map do |attr|
 
   name = attr.attributes['name'].value.gsub(/\s+/, '')
+  @name_map[WellsFargo.underscore name] = name
   name = WellsFargo.underscore name
 
   use = attr.attributes['use']
@@ -32,6 +41,7 @@ end.join("\n")}
 #{(definition / 'xsd|element').map do |element|
 
   name = (element.attributes['ref'] || element.attributes['name']).value.gsub(/\s+/, '')
+  @name_map[WellsFargo.underscore name] = name
   name = WellsFargo.underscore name
   options = {}
   limit = ((max = element.attributes['maxOccurs']) && max && max.value).to_i
@@ -49,6 +59,7 @@ end.join("\n")}
 end
 EOF
           end
+          save_name_map
         end
       end
 
@@ -59,6 +70,10 @@ EOF
       end
 
       protected
+
+        def save_name_map
+          File.open(NameMapFile, 'w') {|f| f.write Marshal.dump(@name_map) }
+        end
     
         def load_schema
           require 'nokogiri'

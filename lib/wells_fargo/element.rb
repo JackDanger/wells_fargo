@@ -3,29 +3,49 @@ module WellsFargo
 
     attr_accessor :xml, :attributes
 
+    NameMap = Schema.NameMap
+
     def initialize xml, attributes
       @xml = xml
       @attributes = attributes
     end
 
     def add_child name, attributes = {}, &block
-      child = camelize(name).constantize.new(xml, attributes)
-      xml.send *child.node do
-        yield child
+
+      child_class_name = NameMap[name.to_s]
+      begin
+        child_class = Element.const_get(child_class_name)
+      rescue
+        Element.const_set(child_class_name, Class.new(Element))
+        child_class = Element.const_get(child_class_name)
+      end
+
+      child = child_class.new(xml, attributes)
+      capture = proc do |x|
+        if block_given?
+          content = yield child
+          content.to_s
+        elsif !attributes.is_a?(Hash)
+          attributes.to_s
+        end
+      end
+
+      if child.attributes.is_a?(Hash)
+        xml.tag! child.name, child.attributes, &capture
+      else
+        xml.tag! child.name, child.attributes
       end
     end
 
-    def node
-      [self.class.name.split('::').last, attributes]
+    def name
+      self.class.name.split('::').last
     end
 
     protected
 
       def method_missing method, *args, &block
-        if self.class.attributes.include? method.to_sym
-          attribute method, *args, &block
-        elsif self.class.children.any? {|c| method.to_sym == c[:name] }
-          child method, *args, &block
+        if self.class.children.any? {|c| method.to_sym == c[:name] }
+          add_child method, *args, &block
         else
           super
         end

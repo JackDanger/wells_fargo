@@ -13,5 +13,5 @@ end
 
 desc "Refresh element definition files from schema.xml"
 task :schema_to_ruby do
-  system "ruby -rubygems -r lib/wells_fargo.rb -e 'WellsFargo::Schema.generate_element_files'"
+  system "rm lib/wells_fargo/elements/*; ruby -rubygems -r lib/wells_fargo.rb -e 'WellsFargo::Schema.generate_element_files'"
 end
