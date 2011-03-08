@@ -2,27 +2,26 @@ module WellsFargo
   class PaymentManager
     def initialize(business_name, options = {})
       @elements = []
-      start_file business_name, options
+      @business_name = business_name
+      @options = options
     end
 
-    def start_file(name, options)
-      builder = Builder::XmlMarkup.new
+    def file
+      @xml = Builder::XmlMarkup.new(:indent => 2)
       attributes = {}
-      attributes['CompanyID'] = name
+      attributes['CompanyID'] = @business_name
       attributes['xmlns:xsi'] = "http://www.w3.org/2001/XMLSchema-instance"
-      attributes['PmtRecCount'] = options[:pmg_rec_count] if options[:pmg_rec_count]
-      attributes['PmtRecTotal'] = options[:pmg_rec_total] if options[:pmg_rec_total]
-      @file = builder.File attributes
+      attributes['PmtRecCount'] = @options[:pmg_rec_count] if @options[:pmg_rec_count]
+      attributes['PmtRecTotal'] = @options[:pmg_rec_total] if @options[:pmg_rec_total]
+      root = WellsFargo::Element::File.new(@xml, attributes)
+      @xml.instruct!
+      @xml.tag! root.element_name, root.attributes do
+        yield root
+      end
     end
 
-    protected
-
-      def method_missing method, *args, &block
-        if WellsFargo::Element.constants.include? method.to_s
-          child method, *args, &block
-        else
-          super
-        end
-      end
+    def to_xml
+      @xml.target!
+    end
   end
 end
