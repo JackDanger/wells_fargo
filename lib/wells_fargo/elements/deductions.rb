@@ -1,4 +1,6 @@
-class Deductions < WellsFargo::Element
+module WellsFargo
+  class Deductions < WellsFargo::Element
 
-  child :AmtGroup
+    child :AmtGroup
+  end
 end

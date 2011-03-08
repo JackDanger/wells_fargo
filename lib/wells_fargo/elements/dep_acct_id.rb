@@ -1,6 +1,8 @@
-class DepAcctID < WellsFargo::Element
-  attribute :AcctID
-  attribute :AcctType
-  attribute :AcctCur
-  child :BankInfo
+module WellsFargo
+  class DepAcctID < WellsFargo::Element
+    attribute :AcctID
+    attribute :AcctType
+    attribute :AcctCur
+    child :BankInfo
+  end
 end

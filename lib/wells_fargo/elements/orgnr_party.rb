@@ -1,7 +1,9 @@
-class OrgnrParty < WellsFargo::Element
+module WellsFargo
+  class OrgnrParty < WellsFargo::Element
 
-  child :Name
-  child :RefInfo
-  child :PostAddr
-  child :ContactInfo
+    child :Name
+    child :RefInfo
+    child :PostAddr
+    child :ContactInfo
+  end
 end

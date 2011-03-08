@@ -1,4 +1,6 @@
-class EDDBillerID < WellsFargo::Element
+module WellsFargo
+  class EDDBillerID < WellsFargo::Element
 
 
+  end
 end

@@ -1,4 +1,6 @@
-class CurAmt < WellsFargo::Element
+module WellsFargo
+  class CurAmt < WellsFargo::Element
 
 
+  end
 end

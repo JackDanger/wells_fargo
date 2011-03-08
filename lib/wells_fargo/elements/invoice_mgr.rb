@@ -1,4 +1,6 @@
-class InvoiceMgr < WellsFargo::Element
+module WellsFargo
+  class InvoiceMgr < WellsFargo::Element
 
-  child :InvoiceMgrFlag, :limit => 0
+    child :InvoiceMgrFlag, :limit => 0
+  end
 end

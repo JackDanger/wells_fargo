@@ -1,4 +1,6 @@
-class PmtSuppPOB < WellsFargo::Element
+module WellsFargo
+  class PmtSuppPOB < WellsFargo::Element
 
-  child :OrigInvDate, :limit => 0
+    child :OrigInvDate, :limit => 0
+  end
 end

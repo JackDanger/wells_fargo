@@ -13,30 +13,32 @@ module WellsFargo
           puts "Writing #{name} => #{File.basename file}"
           File.open(file, 'w') do |f|
             f.write <<-EOF  
-class #{name} < WellsFargo::Element
+module WellsFargo
+  class #{name} < WellsFargo::Element
 #{(definition / 'xsd|attribute').map do |attr|
-  attribute_name = attr.attributes['name'].value
+  attribute_name = attr.attributes['name'].value.gsub(/\s+/, '')
   use = attr.attributes['use']
 
   if use && 'required' == use.value
-    "  required_attribute :#{attribute_name}"
+    "    required_attribute :#{attribute_name}"
   else
-    "  attribute :#{attribute_name}"
+    "    attribute :#{attribute_name}"
   end
 end.join("\n")}
 #{(definition / 'xsd|element').map do |element|
-  child = (element.attributes['ref'] || element.attributes['name']).value
+  child = (element.attributes['ref'] || element.attributes['name']).value.gsub(/\s+/, '')
   options = {}
   limit = ((max = element.attributes['maxOccurs']) && max && max.value).to_i
   options[:limit] = limit if limit > 0
   options[:simple] = true if element.attributes['ref'].nil?
 
   if {} == options
-    "  child :#{child}"
+    "    child :#{child}"
   else
-    "  child :#{child}, :limit => #{limit}"
+    "    child :#{child}, :limit => #{limit}"
   end
 end.join("\n")}
+  end
 end
 EOF
           end

@@ -1,4 +1,6 @@
-class EffDt < WellsFargo::Element
+module WellsFargo
+  class EffDt < WellsFargo::Element
 
 
+  end
 end

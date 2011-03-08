@@ -1,4 +1,6 @@
-class OrgnrDepAcctID < WellsFargo::Element
+module WellsFargo
+  class OrgnrDepAcctID < WellsFargo::Element
 
-  child :DepAcctID
+    child :DepAcctID
+  end
 end

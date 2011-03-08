@@ -1,5 +1,7 @@
-class EarningsTotal < WellsFargo::Element
+module WellsFargo
+  class EarningsTotal < WellsFargo::Element
 
-  child :Hours, :limit => 1
-  child :AmtGroup, :limit => 1
+    child :Hours, :limit => 1
+    child :AmtGroup, :limit => 1
+  end
 end

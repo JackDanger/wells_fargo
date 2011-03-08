@@ -1,4 +1,6 @@
-class IntermediaryDepAcctID < WellsFargo::Element
+module WellsFargo
+  class IntermediaryDepAcctID < WellsFargo::Element
 
-  child :DepAcctID
+    child :DepAcctID
+  end
 end
