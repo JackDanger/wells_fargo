@@ -31,13 +31,13 @@ module WellsFargo
       end
 
       if child.attributes.is_a?(Hash)
-        xml.tag! child.name, child.attributes, &capture
+        xml.tag! child.element_name, child.attributes, &capture
       else
-        xml.tag! child.name, child.attributes
+        xml.tag! child.element_name, child.attributes
       end
     end
 
-    def name
+    def element_name
       self.class.name.split('::').last
     end
 

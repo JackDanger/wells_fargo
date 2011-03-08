@@ -5,7 +5,7 @@ class ElementTest < Test::Unit::TestCase
     setup {
       @xml = Builder::XmlMarkup.new
       element = WellsFargo::Element::PmtRec.new(@xml, :PmtFormat => 'CHK')
-      @xml.tag! element.name, element.attributes do
+      @xml.tag! element.element_name, element.attributes do
         @xml.CurAmt '290.00'
       end
     }
@@ -18,7 +18,7 @@ class ElementTest < Test::Unit::TestCase
     setup {
       @xml = Builder::XmlMarkup.new
       payment = WellsFargo::Element::PmtRec.new(@xml, :PmtFormat => 'CHK')
-      @xml.tag! payment.name, payment.attributes do |x|
+      @xml.tag! payment.element_name, payment.attributes do |x|
         payment.cur_amt '290.00'
       end
     }
@@ -31,7 +31,7 @@ class ElementTest < Test::Unit::TestCase
     setup {
       @xml = Builder::XmlMarkup.new(:indent => 2)
       file = WellsFargo::Element::File.new(@xml, {})
-      @xml.tag! file.name do
+      @xml.tag! file.element_name do
         file.pmt_rec :PmtFormat => 'CHK' do |payment|
           payment.ref_info :RefType => 'IA' do |ref|
             ref.ref_id 'Insert1'
@@ -100,6 +100,9 @@ class ElementTest < Test::Unit::TestCase
       <DeliveryCode>400</DeliveryCode>
     </Check>
     <OrgnrParty>
+      <Name>
+        <Name1>ABC Corporation</Name1>
+      </Name>
       <RefInfo RefType="A7">
         <RefID>CHKIMG123</RefID>
         <RefDesc>Check Image description</RefDesc>
