@@ -7,14 +7,14 @@ module WellsFargo
     class << self
       def generate_element_files
         schema do |definition|
-          file_name = definition.attributes['name'].value
-          file = File.join(ElementDir, "#{WellsFargo.underscore file_name}.rb")
-          puts "Writing #{file_name} => #{File.basename file_name}"
-          File.open(file_name, 'w') do |f|
+          class_name = definition.attributes['name'].value
+          file = File.join(ElementDir, "#{WellsFargo.underscore class_name}.rb")
+          puts "Writing #{class_name} => #{File.basename file}"
+          File.open(file, 'w') do |f|
             f.write <<-EOF  
 module WellsFargo
   class Element
-    class #{file_name} < WellsFargo::Element
+    class #{class_name} < WellsFargo::Element
 #{(definition / 'xsd|attribute').map do |attr|
 
   name = attr.attributes['name'].value.gsub(/\s+/, '')
