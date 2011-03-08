@@ -1,7 +1,7 @@
 module WellsFargo
   class Element
 
-    attr_accessor :xml, :attributes
+    attr_accessor :xml, :children, :attributes
 
     NameMap = Schema.NameMap
 
@@ -11,25 +11,31 @@ module WellsFargo
     end
 
     def add_child name, attributes = {}, &block
+      @children ||= []
+      @children << {:name => name, :attributes => attributes, :block => block}
+    end
 
-      child_class_name = NameMap[name.to_s]
-      begin
-        child_class = Element.const_get(child_class_name)
-      rescue
-        Element.const_set(child_class_name, Class.new(Element))
-        child_class = Element.const_get(child_class_name)
+    def finish! 
+      children.each do |child|
+        render child
       end
+    end
 
-      child = child_class.new(xml, attributes)
+    def render node
+      child_class = element_class NameMap[node[:name].to_s]
+      child = child_class.new(xml, node[:attributes])
+
       capture = proc do |x|
-        if block_given?
+        if node[:block]
           content = yield child
+          child.finish!
           content.to_s
-        elsif !attributes.is_a?(Hash)
-          attributes.to_s
+        elsif !child.attributes.is_a?(Hash)
+          child.attributes.to_s
         end
       end
 
+      puts "Calling #{child.element_name} to build #{child.class.name}"
       if child.attributes.is_a?(Hash)
         xml.tag! child.element_name, child.attributes, &capture
       else
@@ -42,6 +48,13 @@ module WellsFargo
     end
 
     protected
+
+      def element_class name
+        Element.const_get name
+      rescue
+        Element.const_set name, Class.new(Element)
+        Element.const_get name
+      end
 
       def method_missing method, *args, &block
         if self.class.children.any? {|c| method.to_sym == c[:name] }

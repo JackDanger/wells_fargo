@@ -21,6 +21,7 @@ class ElementTest < Test::Unit::TestCase
       @xml.tag! payment.element_name, payment.attributes do |x|
         payment.cur_amt '290.00'
       end
+      payment.finish!
     }
     should "be able to render to xml" do
       assert_equal '<PmtRec PmtFormat="CHK"><CurAmt>290.00</CurAmt></PmtRec>',
