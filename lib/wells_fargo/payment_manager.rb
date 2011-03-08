@@ -2,15 +2,17 @@ module WellsFargo
   class PaymentManager
     def initialize(business_name, options = {})
       @elements = []
-      start_document business_name, options
+      start_file business_name, options
     end
 
-    def start_document(name, options)
-      @document = Nokogiri::XML::Node.new 'File'
-      @document['CompanyID'] = name
-      @document['xmlns:xsi'] = "http://www.w3.org/2001/XMLSchema-instance"
-      @document['PmtRecCount'] = options[:pmg_rec_count] if options[:pmg_rec_count]
-      @document['PmtRecTotal'] = options[:pmg_rec_total] if options[:pmg_rec_total]
+    def start_file(name, options)
+      builder = Builder::XmlMarkup.new
+      attributes = {}
+      attributes['CompanyID'] = name
+      attributes['xmlns:xsi'] = "http://www.w3.org/2001/XMLSchema-instance"
+      attributes['PmtRecCount'] = options[:pmg_rec_count] if options[:pmg_rec_count]
+      attributes['PmtRecTotal'] = options[:pmg_rec_total] if options[:pmg_rec_total]
+      @file = builder.File attributes
     end
 
     protected

@@ -1,25 +1,30 @@
 module WellsFargo
   class Element
 
-    def initialize(parent, &block)
-      @parent = parent
+    attr_accessor :xml, :attributes
+
+    def initialize xml, attributes
+      @xml = xml
+      @attributes = attributes
     end
 
-    def attribute name, value
-      
+    def add_child name, attributes = {}, &block
+      child = camelize(name).constantize.new(xml, attributes)
+      xml.send *child.node do
+        yield child
+      end
     end
 
-    def child name, &block
-      result = yield name.constantize.new(self)
-      parent.add_child result
+    def node
+      [self.class.name.split('::').last, attributes]
     end
 
     protected
 
       def method_missing method, *args, &block
-        if @@attributes.include? method.to_sym
+        if self.class.attributes.include? method.to_sym
           attribute method, *args, &block
-        elsif @@children.any? {|c| method.to_sym == c[:name] }
+        elsif self.class.children.any? {|c| method.to_sym == c[:name] }
           child method, *args, &block
         else
           super
@@ -28,6 +33,7 @@ module WellsFargo
   end
 
   class << Element
+    attr_accessor :attributes, :required, :children
     def attribute name
       @attributes ||= []
       @attributes << name
