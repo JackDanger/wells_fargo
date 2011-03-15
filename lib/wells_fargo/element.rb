@@ -40,7 +40,7 @@ module WellsFargo
 
       # Implicitly define class as a simple element if it's missing
       def retrieve_element_class name
-        eval "class WellsFargo::Element::#{name.to_s.camelcase} < WellsFargo::Element; self; end;"
+        eval "class WellsFargo::Element::#{WellsFargo.camelize name} < WellsFargo::Element; self; end;"
       end
 
       def method_missing method, *args, &block
