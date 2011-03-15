@@ -13,7 +13,7 @@ module WellsFargo
     def add_child name, attributes = {}, &block
 
       child_class_name = NameMap[name.to_s]
-      child_class = eval "class WellsFargo::Element::#{child_class_name} < WellsFargo::Element; self; end"
+      child_class = retrieve_element_class child_class_name
 
       child = child_class.new(xml, attributes)
       capture = proc do |x|
@@ -36,12 +36,12 @@ module WellsFargo
       self.class.name.split('::').last
     end
 
-    # Implicitly define class
-    def self.const_missing(name)
-      eval "class WellsFargo::Element::#{name.to_s.camelcase} < WellsFargo::Element; self; end;"
-    end
-
     protected
+
+      # Implicitly define class as a simple element if it's missing
+      def retrieve_element_class name
+        eval "class WellsFargo::Element::#{name.to_s.camelcase} < WellsFargo::Element; self; end;"
+      end
 
       def method_missing method, *args, &block
         if self.class.children.any? {|c| method.to_sym == c[:name] }
