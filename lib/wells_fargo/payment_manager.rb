@@ -11,8 +11,8 @@ module WellsFargo
       attributes = {}
       attributes['CompanyID'] = @business_name
       attributes['xmlns:xsi'] = "http://www.w3.org/2001/XMLSchema-instance"
-      attributes['PmtRecCount'] = @options[:pmt_rec_count] if @options[:pmt_rec_count]
-      attributes['PmtRecTotal'] = @options[:pmt_rec_total] if @options[:pmt_rec_total]
+      attributes['PmtRecCount'] = @options[:PmtRecCount] if @options[:PmtRecCount]
+      attributes['PmtRecTotal'] = @options[:PmtRecTotal] if @options[:PmtRecTotal]
       root = WellsFargo::Element::File.new(@xml, attributes)
       @xml.instruct!
       @xml.tag! root.element_name, root.attributes do
